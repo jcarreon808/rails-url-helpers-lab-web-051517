@@ -1,5 +1,6 @@
 require 'byebug'
 require 'rails_helper'
+require 'pry'
 
 describe 'Route to view' do
   it 'has an index page' do
@@ -57,6 +58,7 @@ describe 'Activate page' do
   end
 
   it "Should mark an inactive stuent as active" do
+    # binding.pry
     visit activate_student_path(@student)
     @student.reload
     expect(@student.active).to eq(true)
